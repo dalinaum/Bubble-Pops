@@ -48,7 +48,8 @@ void touch(float x, float y, float pressure, int id) {
     }
 }
 
-void root(const Ball_t *ballIn, Ball_t *ballOut, BallControl_t *ctl, uint32_t x) {
+void root(const Ball_t *ballIn, Ball_t *ballOut, const void *vctl, uint32_t x) {
+    BallControl_t *ctl = (BallControl_t *) vctl;
     float2 fv = {0, 0};
     float2 pos = ballIn->position;
 
